@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Custom Jasmine matcher library to see a more useful diff view in the reporter output.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/impaler/jasmine-diff-matchers.git"
+  },
   "scripts": {
     "test": "jasmine-node ./test --noStack"
   },
