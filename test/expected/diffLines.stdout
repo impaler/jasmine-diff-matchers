@@ -1,0 +1,32 @@
+undefinedFFF
+
+Failures:
+
+  1) Custom matcher: diffLines diffs two blocks of text, comparing line by line. should toEqualContents
+   Message:
+     The content was different, please review the result of the diff:
+
+false
+
+
+
+  2) Custom matcher: diffLines diffs two blocks of text, comparing line by line. should toEqualContents
+   Message:
+     The content was different, please review the result of the diff:
+
+false
+
+
+
+  3) Custom matcher: diffLines diffs two blocks of text, comparing line by line. should toEqualFileContents
+   Message:
+     The content was different, please review the result of the diff:
+
+false
+
+
+
+Finished in 0.008 seconds
+3 tests, 3 assertions, 3 failures, 0 skipped
+
+

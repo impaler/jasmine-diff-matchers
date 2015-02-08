@@ -1,0 +1,17 @@
+{
+  "name": "jasmine-diff-matchers",
+  "version": "0.0.1",
+  "description": "Custom Jasmine matcher library to see a more useful diff view in the reporter output.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node ./test --noStack"
+  },
+  "author": "Chris Decoster",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.0.3",
+    "diff": "^1.2.2",
+    "jasmine-node": "^1.14.5",
+    "q": "^1.1.2"
+  }
+}
