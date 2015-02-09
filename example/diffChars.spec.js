@@ -1,9 +1,9 @@
-require('../index').basePath = 'example';
+require('../config').basePath = 'example';
 
 describe('Custom matcher: diffChars diffs two blocks of text, comparing character by character.', function () {
 
     beforeEach(function () {
-        this.addMatchers(require('../matchers/diffChars'));
+        this.addMatchers(require('../index').diffChars);
     });
 
     it('should toEqualContents', function () {

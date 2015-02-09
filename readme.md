@@ -13,14 +13,20 @@ the Jasmine `addMatchers()` api in a `beforeEach` block, Example.
 
  ```
      beforeEach(function () {
-         this.addMatchers(require('jasmine-diff-matchers').diffPatch);
+         this.addMatchers(require('jasmine-diff-matchers').diffChars);
      });
  ```
 
 Now the custom matchers are added to the Jasmine api just like any other core matcher:
 
 ```
-    it('should have the expected output to compare the cosmos', function () {
-        expect('compare/cosmos.txt').diffPatch('expected/cosmos.txt');
+    it('should display the same quote from Carl Sagan.', function () {
+        expect('pale blue dot').diffChars('pale yellow dot');
     });
+```
+
+You can change the default deletionsColor, addedColor and sameColor with the config:
+
+```
+    require('../config').addedColor = 'blue';
 ```

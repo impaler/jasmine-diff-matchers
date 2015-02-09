@@ -1,9 +1,9 @@
-require('../index').basePath = 'example';
+require('../config').basePath = 'example';
 
 describe('Custom matcher: diffLines diffs two blocks of text, comparing line by line.', function () {
 
     beforeEach(function () {
-        this.addMatchers(require('../matchers/diffLines'));
+        this.addMatchers(require('../index').diffLines);
     });
 
     it('should toEqualContents', function () {

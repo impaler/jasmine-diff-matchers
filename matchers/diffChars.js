@@ -7,12 +7,13 @@
 var fs = require('fs'),
     path = require('path');
 
-var diffExpect = require('../index');
+var config = require('../config');
+var diffExpect = require('../diffUtil');
 
 module.exports = {
     diffChars: function (expected) {
         if (expected === undefined) {
-            console.error('diffChars() is missing a required parameter to compare to.')
+            console.error('diffChars() is missing a required parameter to compare to.');
         }
 
         var result = this.actual === expected;
@@ -25,24 +26,24 @@ module.exports = {
             }
 
             return diffExpect.constructDiffMessage(diffResult);
-        }
+        };
 
         return result;
     },
     diffFileChars: function (expected) {
         if (expected === undefined) {
-            console.error('diffFileChars() is missing a required parameter to compare to.')
+            console.error('diffFileChars() is missing a required parameter to compare to.');
         }
 
-        var actualFilePath = path.resolve(__dirname, '..', diffExpect.basePath, this.actual);
-        var expectedFilePath = path.resolve(__dirname, '..', diffExpect.basePath, expected);
+        var actualFilePath = path.resolve(__dirname, '..', config.basePath, this.actual);
+        var expectedFilePath = path.resolve(__dirname, '..', config.basePath, expected);
 
         if (!fs.existsSync(expectedFilePath)) {
-            console.error('diffFileChars() the filepath is missing', expectedFilePath)
+            console.error('diffFileChars() the filepath is missing', expectedFilePath);
         }
 
         if (!fs.existsSync(actualFilePath)) {
-            console.error('diffFileChars() the filepath is missing', actualFilePath)
+            console.error('diffFileChars() the filepath is missing', actualFilePath);
         }
 
         var actualContent = fs.readFileSync(actualFilePath, 'utf8');
@@ -56,7 +57,8 @@ module.exports = {
             }
 
             return diffExpect.constructDiffMessage(diffResult);
-        }
+        };
+
         return result;
     }
-}
+};

@@ -1,9 +1,9 @@
-require('../index').basePath = 'example';
+require('../config').basePath = 'example';
 
 describe('Custom matcher: diffPatch will display the diff in a patch format.', function () {
 
     beforeEach(function () {
-        this.addMatchers(require('../matchers/diffPatch'));
+        this.addMatchers(require('../index').diffPatch);
     });
 
     it('should result in a pass given two identical files', function () {
