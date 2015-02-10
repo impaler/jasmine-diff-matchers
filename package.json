@@ -1,6 +1,6 @@
 {
   "name": "jasmine-diff-matchers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Custom Jasmine matcher library to see a more useful diff view in the reporter output.",
   "main": "index.js",
   "repository": {
