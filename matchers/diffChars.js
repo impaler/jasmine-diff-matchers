@@ -19,13 +19,7 @@ module.exports = {
         var result = this.actual === expected;
 
         this.message = function () {
-            var diffResult = '';
-
-            if (!result) {
-                diffResult = diffExpect.diffChars(this.actual, expected);
-            }
-
-            return diffExpect.constructDiffMessage(diffResult);
+            return diffExpect.diffChars(this.actual, expected);
         };
 
         return result;
@@ -51,12 +45,7 @@ module.exports = {
         var result = actualContent === expectedContent;
 
         this.message = function () {
-            var diffResult = '';
-            if (!result) {
-                diffResult = diffExpect.diffChars(actualContent, expectedContent);
-            }
-
-            return diffExpect.constructDiffMessage(diffResult);
+            return diffExpect.diffChars(actualContent, expectedContent);
         };
 
         return result;

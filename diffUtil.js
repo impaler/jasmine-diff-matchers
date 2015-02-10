@@ -4,7 +4,6 @@ var diff = require('diff'),
 var config = require('./config');
 
 module.exports = {
-    constructDiffMessage: constructDiffMessage,
     diffChars: diffChars,
     diffLines: diffLines,
     diffPatch: diffPatch
@@ -18,15 +17,6 @@ module.exports = {
 function resolveColor(diffPart) {
     return diffPart.added ? config.addedColor :
         diffPart.removed ? config.deletionsColor : config.sameColor;
-}
-
-/**
- * Setup a generic diff result message for the matchers.
- * @param message
- * @returns {string}
- */
-function constructDiffMessage(message) {
-    return 'The content was different, please review the result of the diff:\n\n' + message + '\n';
 }
 
 /**
@@ -89,7 +79,7 @@ function diffPatch(actual, expected, fileName) {
             line = colors[config.sameColor](line);
         }
         resultLines.push(line);
-    })
+    });
 
     var message = resultLines.join('\n');
 
