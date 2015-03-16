@@ -67,7 +67,7 @@ module.exports = {
                     'with no success)'].join(' ');
             }
         }
-        function isFirstOccurance(value, i, array) {
+        function isFirstOccurrence(value, i, array) {
             return (array.indexOf(value) === i);
         }
         return {
@@ -77,7 +77,7 @@ module.exports = {
                 var pass;
                 var message = [actualFile,expectedFile]
                     .filter(isstring)
-                    .filter(isFirstOccurance)
+                    .filter(isFirstOccurrence)
                     .join(', ');
                 if (message) {
                     pass    = false;
