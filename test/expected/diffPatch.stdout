@@ -3,9 +3,8 @@ undefined.F
 Failures:
 
   1) Custom matcher: diffPatch will display the diff in a patch format. should result in a patch that shows the correct differences
-   Message:
-     The content was different, please review the result of the diff:
-
+    Message:
+      Files do not match, please review the diff below.
 Index: 
 ===================================================================
 --- 
@@ -34,12 +33,12 @@ Index:
  It does no harm to the romance of the sunset to know a little bit about it.”
  
 +― Carl Sagan, Pale Yellow Dot: A Vision of the Human Future in Space
+\ No newline at end of file
 -― Carl Sagan, Pale Blue Dot: A Vision of the Human Future in Space
+\ No newline at end of file
 
 
 
-
-Finished in 0.01 seconds
-2 tests, 2 assertions, 1 failure, 0 skipped
-
+Finished in 0.018 seconds
+2 Tests, 1 Failures, 0 Skipped
 

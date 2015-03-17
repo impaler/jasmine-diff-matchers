@@ -3,25 +3,20 @@ undefinedFFF
 Failures:
 
   1) Custom matcher: diffChars diffs two blocks of text, comparing character by character. should toEqualContents
-   Message:
-     The content was different, please review the result of the diff:
-
+    Message:
+      Text does not match, please review the diff below.
 [37mone t[39m[31mwo t[39m[37mhree[39m[32m two[39m
 
 
-
   2) Custom matcher: diffChars diffs two blocks of text, comparing character by character. should toEqualContents
-   Message:
-     The content was different, please review the result of the diff:
-
+    Message:
+      Text does not match, please review the diff below.
 [37mone two three[39m[32me[39m
 
 
-
   3) Custom matcher: diffChars diffs two blocks of text, comparing character by character. should toEqualFileContents
-   Message:
-     The content was different, please review the result of the diff:
-
+    Message:
+      Files do not match, please review the diff below.
 [37m“How is it that hardly any major religion has looked at science and concluded, “This is better than we thought!
 The Universe is much bigger than our prophets said, grander, more subtle, more elegant?” Instead they say,
 “No, no, no! My god is a little god, and I want him to stay that way.” A religion, old or new, that stressed
@@ -45,8 +40,6 @@ It does no harm to the romance of the sunset to know a little bit about it.”
 ― Carl Sagan, Pale [39m[32mYe[39m[31mB[39m[37ml[39m[32mlow[39m[31mue[39m[37m Dot: A Vision of the Human Future in Space[39m
 
 
-
-Finished in 0.012 seconds
-3 tests, 3 assertions, 3 failures, 0 skipped
-
+Finished in 0.019 seconds
+3 Tests, 3 Failures, 0 Skipped
 
