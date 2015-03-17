@@ -1,4 +1,4 @@
-Custom Jasmine matchers for seeing a more useful output when comparing Strings.
+Custom Jasmine 2.x matchers for seeing a more useful output when comparing Strings.
 
 For example you may want to compare files, seeing the output from `expect(expected).toBe(result)`
 only outputs the entire comparison with no hint to any deletions, additions and what is the same.
@@ -13,7 +13,7 @@ the Jasmine `addMatchers()` api in a `beforeEach` block, Example.
 
  ```
      beforeEach(function () {
-         this.addMatchers(require('jasmine-diff-matchers').diffChars);
+         jasmine.addMatchers(require('jasmine-diff-matchers').diffChars);
      });
  ```
 

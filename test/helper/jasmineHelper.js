@@ -1,5 +1,7 @@
+'use strict';
+
 var spawn = require('child_process').spawn,
-    Q = require('q');
+    Q     = require('q');
 
 /**
  * Shortcut to programatically run a command line tool and return the process object
@@ -11,7 +13,7 @@ function runJasmine(args, cwd) {
     args = args || [];
     cwd = cwd || __dirname;
 
-    var angularity = spawn('jasmine-node', args, {cwd: cwd});
+    var angularity = spawn('node', ['node_modules/jasmine-node/bin/jasmine-node'].concat(args), {cwd: cwd});
     angularity.stdout.setEncoding('utf8');
 
     return angularity;
@@ -42,7 +44,7 @@ function runJasmineQ(args, cwd) {
 
     jasmineProcess.on('exit', function (code) {
         deferred.resolve({
-            code: code,
+            code  : code,
             stdout: stdout,
             stderr: stderr
         });
@@ -72,6 +74,6 @@ function removeFinishedLine(content) {
 
 module.exports = {
     removeFinishedLine: removeFinishedLine,
-    runJasmine: runJasmine,
-    runJasmineQ: runJasmineQ
+    runJasmine        : runJasmine,
+    runJasmineQ       : runJasmineQ
 };

@@ -3,7 +3,7 @@ require('../config').basePath = 'example';
 describe('Custom matcher: diffLines diffs two blocks of text, comparing line by line.', function () {
 
     beforeEach(function () {
-        this.addMatchers(require('../index').diffLines);
+        jasmine.addMatchers(require('../index').diffLines);
     });
 
     it('should toEqualContents', function () {
