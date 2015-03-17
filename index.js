@@ -24,10 +24,13 @@ function getStringCompare(compareMethod) {
                 if (message) {
                     pass    = false;
                 } else {
-                    pass    = (actual === expected);
+                    var posixActual   = posixLineEndings(actual);
+                    var posixExpected = posixLineEndings(expected);
+                    pass    = (posixActual === posixExpected);
                     message = pass ?
                         'Text is matching' :
-                        ('Text does not match, please review the diff below.\n' + compareMethod(actual, expected));
+                        ('Text does not match, please review the diff below.\n' +
+                        compareMethod(posixActual, posixExpected));
                 }
                 return {
                     pass   : pass,
@@ -96,11 +99,13 @@ function getFileCompare(compareMethod) {
                 if (message) {
                     pass    = false;
                 } else {
-                    pass    = (foundActual.toString() === foundExpected.toString());    // buffer comparison
+                    var posixActual   = posixLineEndings(foundActual);
+                    var posixExpected = posixLineEndings(foundExpected);
+                    pass    = (posixActual === posixExpected);
                     message = pass ?
                         'Files are matching' :
                         ('Files do not match, please review the diff below.\n' +
-                        compareMethod(foundActual.toString(), foundExpected.toString()));
+                        compareMethod(posixActual, posixExpected));
                 }
                 return {
                     pass   : pass,
@@ -109,6 +114,15 @@ function getFileCompare(compareMethod) {
             }
         }
     };
+}
+
+/**
+ * Change windows style line endings to posix style
+ * @param {string|Buffer} candide The text of buffer to convert
+ * @returns {string} The converted text
+ */
+function posixLineEndings(candidate) {
+    return candidate.toString().replace(/\r?\n/g, '\n');
 }
 
 module.exports = {
